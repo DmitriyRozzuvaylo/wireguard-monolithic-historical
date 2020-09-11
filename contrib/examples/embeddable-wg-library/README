@@ -11,9 +11,23 @@ Usage
 
 Copy wireguard.c and wireguard.h into your project. They should build with
 any C89 compiler. There are no dependencies except libc.
+Also you can use it as shared library.
 
 Please see the set of simple functions in wireguard.h for information on
 how to use, as well as the example code in test.c.
+
+
+Package
+-------
+
+Generate debian package that contains shared library and header file:
+
+```bash
+make
+chmod +x scripts/generate_deb_package.sh
+./scripts/generate_deb_package.sh
+```
+In current directory you will get debian package `libemeddeble-wg...deb`
 
 
 License
