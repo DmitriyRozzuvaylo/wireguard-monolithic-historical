@@ -1,0 +1,24 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: cd contrib/examples/embeddable-wg-library && make
+    - name: package
+      run: cd contrib/examples/embeddable-wg-library && ./scripts/generate_deb_package.sh
+    - name: upload artifcats
+      uses: actions/upload-artifact@v2
+      with:
+          name: package
+          path: contrib/examples/embeddable-wg-library/libembeddable-wg.deb
