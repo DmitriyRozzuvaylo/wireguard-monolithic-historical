@@ -1,9 +1,9 @@
 #!/bin/bash
 
-apt update
+sudo apt update
 #install fpm
 sudo apt-get -y install ruby ruby-dev rubygems build-essential
-sudo gem install --no-ri --no-rdoc fpm
+sudo gem install fpm
 
 rm -rf install
 mkdir -p install/usr/lib
