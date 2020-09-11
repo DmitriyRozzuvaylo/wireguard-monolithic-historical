@@ -16,7 +16,7 @@ jobs:
     - name: make
       run: cd contrib/examples/embeddable-wg-library && make
     - name: package
-      run: cd contrib/examples/embeddable-wg-library && ./scripts/generate_deb_package.sh
+      run: cd contrib/examples/embeddable-wg-library && chmod +x scripts/generate_deb_package.sh && ./scripts/generate_deb_package.sh
     - name: upload artifcats
       uses: actions/upload-artifact@v2
       with:
